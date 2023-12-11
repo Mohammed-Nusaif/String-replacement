@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Layer1 {
+            position:absolute;
+            left:296px;
+            top:200px;
+            width:830px;
+            height:230px;
+            z-index:1;
+}
+    </style>
+    <script>
+        function findandreplace(){
+           var text = document.getElementById("text_data").value;
+            var wordToReplace = document.getElementById("text_id").value;
+            var Replacementword = document.getElementById("replace_data").value;
+
+            var replacedText = text.replace(new RegExp('\\b'+wordToReplace+'\\b','ig'),Replacementword);
+            document.getElementById("demo").innerHTML = replacedText;
+        }
+    </script>
+</head>
+<body>
+    <h2>SEARCH: Paragraph iterator </h2>
+
+    <div id="Layer1">
+        <table width="559" >
+            <tr>
+                <td width="201">&nbsp;</td>
+                <td width="348">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Enter a paragraph: </td>
+                <td><label>
+                    <textarea name="text_data " id="text_data" cols="30" rows="10"></textarea>
+                </label></td>
+            </tr>
+            <tr>
+                <td>word to replace:</td>
+                <td><input type="text" id="text_id"></td>
+            </tr>
+            <tr>
+                <td>Replacement word: </td>
+                <td><input type="text" name="" id="replace_data"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="submit" onclick="findandreplace()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="demo"></p></td>
+            </tr>
+        </table>        
+    </div>
+
+</body>
+</html>
